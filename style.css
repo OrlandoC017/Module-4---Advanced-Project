@@ -83,6 +83,38 @@ button {
     background-color: #242424;
 }
 
+input, textarea {
+    width: 100%;
+    background-color: #242424;
+    color: #fff;
+    outline: none;
+    border: 1px solid #c0c4cc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 40px;
+    transition: all 300ms ease;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+    margin-top: 8px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input:hover, textarea:hover {
+    border-color: #dcdfe6;
+}
+
+input:focus, textarea:focus {
+    border-color: orangered;
+}
+
 /* Navigation */
 
 #personal-logo {
@@ -365,14 +397,15 @@ footer a:visited {
 
 .modal__half {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 72px;
 }
 
 .modal__about {
     background-color: rgb(245, 245, 245);
     padding: 40px 72px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .modal__languages {
@@ -414,6 +447,7 @@ footer a:visited {
     bottom: -10px;
     transform: scale(0);
     transition: all 300ms ease;
+    position: relative;
 }
 
 .modal__language--img {
@@ -428,9 +462,44 @@ footer a:visited {
 
 .modal__sub-title {
     margin: 12px 0 24px 0;
+    font-size: 14px;
 }
 
 .modal__para {
     margin-bottom: 12px;
     line-height: 1.75;
+}
+
+.form__item {
+    margin-bottom: 20px;
+}
+
+.form__submit {
+    background-color: navy;
+    border: 2px solid white;
+    border-radius: 25px;
+    color:white;
+    font-weight: 700;
+    max-width: 240px;
+    padding: 12px 24px;
+    transition: all 300ms ease;
+}
+
+.form__submit:hover {
+    border-color: #fff;
+    background-color: transparent;
+}
+
+.form__submit:active {
+    border-color: navy;
+    color: navy;
+}
+
+.modal__overlay--loading {
+    background-color: blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
