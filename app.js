@@ -4,19 +4,28 @@
 
 function contact(event) {
     event.preventDefault();
-    // emailjs
-    //     .sendForm(
-    //         'service_689tqjo',
-    //         'template_xit9e4v',
-    //         event.target,
-    //         'KfAVSU5w044ssnoP8'
-    //     ).then(() => {
-    //         console.log('this worked!')
-    //     })
     const loading = document.querySelector('.modal__overlay--loading');
     const success = document.querySelector('.modal__overlay--success');
-    loading.classList += " modal__overlay--visible"
-    setTimeout(() => {
-        console.log('It worked 1')
-    }, 500)
+    loading.classList.add('modal__overlay--visible');
+
+    emailjs
+        .sendForm(
+            'service_689tqjo',
+            'template_xit9e4v',
+            event.target,
+            'KfAVSU5w044ssnoP8'
+        ).then(() => {
+            loading.classList.remove("modal__overlay--visible")
+            success.classList.add('modal__overlay--visible')
+        }).catch(() => {
+            loading.classList.remove('modal__overlay--visible')
+            alert(
+                "The email service is temporarily unavailable. Please contact me directly at Orlando.Castillo7123@gmail.com"
+            )
+        })
+}
+
+function toggleModal() {
+    //Toggle modal
+    document.body.classList.add('modal--open')
 }

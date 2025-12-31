@@ -91,14 +91,14 @@
         <form id="contact__form" onsubmit="contact(event)">
             <div class="form__item">
                 <label for="" class="form__item--label">Name</label>
-                <input class="input" name="user_name" type="text" ></input>
+                <input class="input" name="user_name" type="text" required></input>
             </div>
             <div class="form__item">
-                <label for="" class="form__item--label">E-Mail</label>
+                <label for="" class="form__item--label" required>E-Mail</label>
                 <input class="input" name="user_email" type="email" ></input>
             </div>
             <div class="form__item">
-                <label for="" class="form__item--label">Message</label>
+                <label for="" class="form__item--label" required>Message</label>
                 <textarea class="input" name="message" type="text" ></textarea>
             </div>
             <button id="contact__submit" class="form__submit">Send it my way</button>
@@ -137,7 +137,7 @@
         </div>
     </header>
 
-    <button class="mail__btn click">
+    <button class="mail__btn click" onclick="toggleModal()">
         <i class="fa-regular fa-envelope"></i>
     </button>
 
