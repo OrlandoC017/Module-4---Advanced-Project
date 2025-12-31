@@ -392,14 +392,20 @@ footer a:visited {
     border-radius: 20px;
     overflow: hidden;
     display: flex;
-    z-index: 100;
+    z-index: -1;
     visibility: hidden;
+    transition: visibility 1s, z-inde 1s, box-shadow 0.5s ease;
 }
 
 .modal--open .modal{
     z-index: 60;
     box-shadow: 0 20px 80px rgb(0, 0, 0.55);
     visibility: visible;
+}
+
+.modal--open .modal__about,
+.modal--open .modal__contact {
+    transform: translateX(0%);
 }
 
 .modal__half {
@@ -409,11 +415,13 @@ footer a:visited {
     justify-content: center;
     padding: 40px 72px;
     position: relative;
+    transition: all 300ms ease-in;
 }
 
 .modal__about {
     background-color: rgb(245, 245, 245);
     padding: 40px 72px;
+    transform: translateX(-110%);
 }
 
 .modal__languages {
@@ -425,6 +433,7 @@ footer a:visited {
 .modal__contact {
     background-color: #242424;
     color:white;
+    transform: translateX(-110%);
 }
 
 .modal__languages {
@@ -519,6 +528,7 @@ footer a:visited {
 
 .modal__overlay.modal__overlay--visible {
     z-index: 1 !important;
+    display: flex;
 }
 
 .modal__overlay {
@@ -527,7 +537,7 @@ footer a:visited {
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: -1;
